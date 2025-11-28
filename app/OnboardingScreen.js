@@ -1,12 +1,30 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 import Icon from 'react-native-vector-icons/FontAwesome'; // FIXED
 
+
+ const Dots = ({selected}) => {
+    let backgroundColor;
+    backgroundColor = selected ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.3)'; //black color for selected dot and gray for unselected dot
+    return (
+      <View style = {
+        {
+          width: 5,
+          height: 5,
+          marginHorizontal: 3,
+          backgroundColor
+        }
+      }> 
+      </View>
+    );
+  }
 export default function OnboardingScreen() {
+ 
     return (
      <Onboarding
         onDone={() => console.log('done')}
         onSkip={() => console.log('Skipped')}
+        DotComponent={ Dots }
 
         pages={[
          {
